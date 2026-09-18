@@ -17,7 +17,7 @@ export default function App() {
   const [introFinished, setIntroFinished] = useState(false);
 
   return (
-    <div className="relative bg-gradient-to-b text-white">
+    <div className="relative bg-black text-white min-h-screen selection:bg-cyan-500 selection:text-black">
       {/* Intro Animation */}
       {!introFinished && (
         <IntroAnimation

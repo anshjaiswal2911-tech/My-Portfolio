@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import {
   FaJava,
   FaPython,
@@ -124,6 +125,71 @@ function SkillItem({ skill }) {
 // =====================================================
 
 export default function Skills() {
+  const trackRef = useRef(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let x = 0;
+    let direction = 1; // 1: Right to Left (Scroll Down), -1: Left to Right (Scroll Up)
+    let lastScrollY = window.scrollY;
+    let animationFrameId;
+    let lastTime = performance.now();
+    const speed = 55; // Pixels per second
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const diff = currentScrollY - lastScrollY;
+
+      if (Math.abs(diff) > 3) {
+        if (diff > 0) {
+          // Scrolling Top to Bottom -> Move Right to Left
+          direction = 1;
+        } else {
+          // Scrolling Bottom to Top -> Move Left to Right
+          direction = -1;
+        }
+        lastScrollY = currentScrollY;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    const animate = (currentTime) => {
+      const deltaTime = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+
+      const halfWidth = track.scrollWidth / 2;
+
+      if (halfWidth > 0) {
+        if (direction === 1) {
+          // Right to Left
+          x -= speed * deltaTime;
+          if (x <= -halfWidth) {
+            x += halfWidth;
+          }
+        } else {
+          // Left to Right
+          x += speed * deltaTime;
+          if (x >= 0) {
+            x -= halfWidth;
+          }
+        }
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
   return (
     <section
       id="skills"
@@ -172,7 +238,7 @@ export default function Skills() {
 
 
         {/* Moving Track */}
-        <div className="skills-track">
+        <div className="skills-track" ref={trackRef}>
 
           {/* First Row */}
           <div className="skills-list">
@@ -370,8 +436,6 @@ export default function Skills() {
           margin: 0;
           padding: 0;
 
-          animation: skills-scroll 30s linear infinite;
-
           will-change: transform;
         }
 
@@ -539,23 +603,6 @@ export default function Skills() {
               rgba(0, 0, 0, 0.65) 55%,
               transparent 100%
             );
-        }
-
-
-        /* =================================================
-           RIGHT → LEFT
-        ================================================= */
-
-        @keyframes skills-scroll {
-
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
-          }
-
         }
 
 

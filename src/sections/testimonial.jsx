@@ -3,12 +3,100 @@
 
 
 
-const testimonial = () => {
+import { motion } from "framer-motion";
+import { Sparkles, Quote, Star } from "lucide-react";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Tech Lead",
+    role: "YR NOVATECH",
+    content:
+      "Ansh is an exceptionally proactive developer who grasps full-stack architectures quickly and delivers robust, production-quality code.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Community Coordinator",
+    role: "Microsoft Learn Student Ambassadors",
+    content:
+      "Ansh demonstrated great leadership and technical depth while hosting developer sessions and guiding fellow students through modern AI tools.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Project Partner",
+    role: "Hackathon Winner Team",
+    content:
+      "Collaborating with Ansh on CollabNest was fantastic. His frontend speed, attention to design detail, and problem-solving skills are top-notch.",
+    rating: 5,
+  },
+];
+
+export default function Testimonials() {
   return (
-    <div className='w-full h-screen'>
-      Testonomial
-    </div>
-  )
+    <section
+      id="testimonials"
+      className="relative w-full bg-black text-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
+      {/* Background Glows */}
+      <div className="pointer-events-none absolute left-[-150px] top-[20%] h-[400px] w-[400px] rounded-full bg-cyan-500/10 blur-[140px]" />
+      <div className="pointer-events-none absolute right-[-150px] bottom-[20%] h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[140px]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-3">
+            <Sparkles size={14} />
+            Endorsements
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+            What People <span className="text-cyan-400">Say</span>
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-400 max-w-xl mx-auto">
+            Feedback and recommendations from mentors, teammates, and tech communities.
+          </p>
+        </div>
+
+        {/* Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t, idx) => (
+            <motion.div
+              key={t.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              className="bg-zinc-950/80 border border-zinc-800/80 p-6 rounded-2xl backdrop-blur-xl shadow-xl hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <Quote size={28} className="text-cyan-400/60" />
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} size={14} fill="currentColor" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                  "{t.content}"
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-900 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                  {t.name.charAt(0)}
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white">{t.name}</h4>
+                  <p className="text-xs text-cyan-400/80">{t.role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default testimonial
