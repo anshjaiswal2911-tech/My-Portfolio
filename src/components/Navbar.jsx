@@ -8,34 +8,34 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50">
+      <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 z-50 bg-black/60 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
 
         {/* LEFT - Logo + Ansh */}
-        <div className="flex items-center gap-3">
+        <a href="#home" className="flex items-center gap-2 sm:gap-3 group">
           <img
             src={Logo}
             alt="Ansh Logo"
-            className="w-8 h-8"
+            className="w-7 h-7 sm:w-8 sm:h-8 transition-transform group-hover:scale-110"
           />
 
-          <span className="text-xl font-bold text-white">
+          <span className="text-lg sm:text-xl font-bold text-white tracking-tight">
             Ansh
           </span>
-        </div>
+        </a>
 
         {/* CENTER - Menu Button */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="absolute left-1/2 -translate-x-1/2 text-white"
+          className="absolute left-1/2 -translate-x-1/2 text-white p-2 rounded-full hover:bg-white/10 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
           aria-label="Open Menu"
         >
-          <Menu size={28} />
+          <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
         </button>
 
         {/* RIGHT - Reach Out */}
         <a
           href="#contact"
-          className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:opacity-90 transition-opacity duration-300"
+          className="bg-linear-to-r from-pink-500 to-blue-500 text-white px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm shadow-md sm:shadow-lg hover:opacity-90 active:scale-95 transition-all duration-300 whitespace-nowrap"
         >
           Reach Out
         </a>

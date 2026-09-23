@@ -233,9 +233,9 @@ export default function Home() {
               <motion.span
                 className="
                   block
-                  text-5xl
-                  sm:text-6xl
-                  md:text-7xl
+                  text-3xl
+                  sm:text-5xl
+                  md:text-6xl
                   lg:text-7xl
                   xl:text-8xl
                   font-bold
@@ -263,13 +263,13 @@ export default function Home() {
                 className="
                   block
                   text-white
-                  whitespace-nowrap
-                  text-5xl
+                  text-4xl
                   sm:text-6xl
                   md:text-7xl
                   lg:text-7xl
                   xl:text-8xl
                   font-bold
+                  tracking-tight
                 "
                 initial={{
                   opacity: 0,
@@ -293,8 +293,9 @@ export default function Home() {
 
             <motion.p
               className="
-                mt-6
-                text-base
+                mt-4
+                sm:mt-6
+                text-sm
                 sm:text-lg
                 md:text-xl
                 text-gray-300
@@ -323,12 +324,14 @@ export default function Home() {
 
             <motion.div
               className="
-                mt-10
+                mt-8
+                sm:mt-10
                 flex
                 flex-wrap
                 items-center
                 justify-start
-                gap-4
+                gap-3
+                sm:gap-4
               "
               initial={{
                 opacity: 0,
@@ -355,11 +358,14 @@ export default function Home() {
                   scale: 0.97,
                 }}
                 className="
-                  px-6
-                  py-3
+                  px-5
+                  sm:px-6
+                  py-2.5
+                  sm:py-3
                   rounded-full
-                  font-medium
-                  text-lg
+                  font-semibold
+                  text-sm
+                  sm:text-base
                   text-white
                   bg-gradient-to-r
                   from-[#1cd8d2]
@@ -386,11 +392,14 @@ export default function Home() {
                   scale: 0.97,
                 }}
                 className="
-                  px-6
-                  py-3
+                  px-5
+                  sm:px-6
+                  py-2.5
+                  sm:py-3
                   rounded-full
-                  font-medium
-                  text-lg
+                  font-semibold
+                  text-sm
+                  sm:text-base
                   text-black
                   bg-white
                   hover:bg-gray-200

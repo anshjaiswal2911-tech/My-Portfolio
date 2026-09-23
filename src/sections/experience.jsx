@@ -326,7 +326,7 @@ export default function Experience() {
 
         {/* ================= MOBILE / TABLET VERTICAL TIMELINE ================= */}
         <div className="block lg:hidden relative py-4">
-          <div className="absolute top-0 bottom-0 left-4 sm:left-6 w-[3px] bg-zinc-800 rounded-full overflow-hidden">
+          <div className="absolute top-0 bottom-0 left-3.5 sm:left-5 w-[3px] bg-zinc-800 rounded-full overflow-hidden">
             <motion.div
               style={{
                 scaleY: scaleLine,
@@ -336,7 +336,7 @@ export default function Experience() {
             />
           </div>
 
-          <div className="space-y-8 pl-12 sm:pl-16">
+          <div className="space-y-6 sm:space-y-8 pl-9 sm:pl-14">
             {experiences.map((exp, index) => (
               <motion.div
                 key={`mobile-${exp.id}`}
@@ -344,23 +344,23 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative bg-zinc-950/90 border border-cyan-500/30 p-5 rounded-2xl shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/60"
+                className="relative bg-zinc-950/90 border border-cyan-500/30 p-4 sm:p-5 rounded-2xl shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/60"
               >
-                <div className="absolute -left-[39px] sm:-left-[47px] top-6 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-full bg-white border-2 border-cyan-400 shadow-[0_0_14px_rgba(34,211,238,1)]" />
+                <div className="absolute -left-[30px] sm:-left-[44px] top-5 flex items-center justify-center">
+                  <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-white border-2 border-cyan-400 shadow-[0_0_14px_rgba(34,211,238,1)]" />
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">
+                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-2">
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">
                     {exp.company}
                   </span>
-                  <span className="text-xs text-gray-400 font-mono flex items-center gap-1">
-                    <Calendar size={12} />
+                  <span className="text-[11px] sm:text-xs text-gray-400 font-mono flex items-center gap-1">
+                    <Calendar size={11} />
                     {exp.period}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-white mb-2">{exp.role}</h3>
+                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{exp.role}</h3>
 
                 <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3">
                   {exp.description}
@@ -370,7 +370,7 @@ export default function Experience() {
                   {exp.skills.map((skill, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 text-xs font-medium rounded bg-zinc-900 text-cyan-300 border border-cyan-500/20"
+                      className="px-2 py-0.5 text-[11px] sm:text-xs font-medium rounded bg-zinc-900 text-cyan-300 border border-cyan-500/20"
                     >
                       {skill}
                     </span>

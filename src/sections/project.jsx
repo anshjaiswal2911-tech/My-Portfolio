@@ -76,7 +76,7 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
   return (
     <div
       ref={containerRef}
-      className="sticky top-24 flex items-center justify-center w-full mb-12 sm:mb-20"
+      className="relative lg:sticky lg:top-24 flex items-center justify-center w-full mb-8 sm:mb-14 lg:mb-20"
       style={{
         zIndex: index + 1,
       }}
@@ -85,7 +85,7 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
         style={{
           scale,
         }}
-        className="w-full max-w-5xl mx-auto rounded-2xl bg-zinc-950/90 border border-cyan-500/25 p-6 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.2)] hover:border-cyan-400/40"
+        className="w-full max-w-5xl mx-auto rounded-2xl bg-zinc-950/90 border border-cyan-500/25 p-5 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden transition-shadow duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.2)] hover:border-cyan-400/40"
       >
         {/* Glow ambient inside card */}
         <div
@@ -93,17 +93,17 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
         />
         <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           {/* LEFT COLUMN: Project Details */}
-          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-5">
+          <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4 sm:space-y-5">
             {/* Header / Number & Category */}
             <div>
               <div className="flex items-center justify-between gap-3 mb-2">
-                <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase font-bold flex items-center gap-1.5">
-                  <Sparkles size={14} className="animate-pulse" />
+                <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-widest uppercase font-bold flex items-center gap-1.5">
+                  <Sparkles size={13} className="animate-pulse" />
                   {project.badge}
                 </span>
-                <span className="text-gray-500 font-mono text-sm font-semibold">
+                <span className="text-gray-500 font-mono text-xs sm:text-sm font-semibold">
                   {project.num} / 0{total}
                 </span>
               </div>
@@ -112,22 +112,22 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
                 {project.title}
               </h3>
 
-              <p className="text-sm font-medium text-cyan-400/80 mt-1">
+              <p className="text-xs sm:text-sm font-medium text-cyan-400/80 mt-1">
                 {project.tagline}
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
               {project.description}
             </p>
 
             {/* Tech Stack Pills */}
-            <div className="flex flex-wrap gap-2 pt-1">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1">
               {project.tech.map((item, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-500/20 backdrop-blur-md"
+                  className="px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-500/20 backdrop-blur-md"
                 >
                   {item}
                 </span>
@@ -135,17 +135,17 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-3">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2 sm:pt-3">
               {/* Live Preview Button */}
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-black bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-300 hover:to-blue-300 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_28px_rgba(34,211,238,0.6)] hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm text-black bg-gradient-to-r from-cyan-400 to-blue-400 hover:from-cyan-300 hover:to-blue-300 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_28px_rgba(34,211,238,0.6)] active:scale-95 flex-1 sm:flex-initial text-center"
               >
-                <Globe size={16} />
+                <Globe size={15} />
                 Live Demo
-                <ArrowUpRight size={16} />
+                <ArrowUpRight size={15} />
               </a>
 
               {/* GitHub Repo Button */}
@@ -153,9 +153,9 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-gray-200 bg-zinc-900/80 border border-zinc-700/80 hover:border-cyan-400/60 hover:text-white hover:bg-zinc-800 transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm text-gray-200 bg-zinc-900/80 border border-zinc-700/80 hover:border-cyan-400/60 hover:text-white hover:bg-zinc-800 transition-all active:scale-95 flex-1 sm:flex-initial text-center"
               >
-                <FaGithub size={16} />
+                <FaGithub size={15} />
                 Source Code
               </a>
             </div>

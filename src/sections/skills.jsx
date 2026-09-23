@@ -613,18 +613,18 @@ export default function Skills() {
         @media (max-width: 768px) {
 
           .skills-section {
-            padding-top: 45px;
-            padding-bottom: 45px;
+            padding-top: 40px;
+            padding-bottom: 40px;
           }
 
 
           .skills-heading {
-            margin-bottom: 25px;
+            margin-bottom: 22px;
           }
 
 
           .skills-heading h2 {
-            font-size: 38px;
+            font-size: 34px;
           }
 
 
@@ -634,23 +634,23 @@ export default function Skills() {
 
 
           .skills-list {
-            gap: 35px;
+            gap: 28px;
 
-            padding-right: 35px;
+            padding-right: 28px;
           }
 
 
           .skill-item {
-            width: 80px;
+            width: 76px;
 
-            min-width: 80px;
+            min-width: 76px;
 
-            height: 90px;
+            height: 84px;
           }
 
 
           .skill-icon {
-            font-size: 36px;
+            font-size: 32px;
           }
 
 
@@ -661,9 +661,39 @@ export default function Skills() {
 
           .skills-fade-left,
           .skills-fade-right {
-            width: 65px;
+            width: 40px;
           }
 
+        }
+
+        @media (max-width: 480px) {
+          .skills-heading h2 {
+            font-size: 28px;
+          }
+
+          .skills-list {
+            gap: 22px;
+            padding-right: 22px;
+          }
+
+          .skill-item {
+            width: 68px;
+            min-width: 68px;
+            height: 78px;
+          }
+
+          .skill-icon {
+            font-size: 28px;
+          }
+
+          .skill-name {
+            font-size: 10px;
+          }
+
+          .skills-fade-left,
+          .skills-fade-right {
+            width: 25px;
+          }
         }
 
 

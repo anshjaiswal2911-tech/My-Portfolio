@@ -22,7 +22,7 @@ function CosmicParticles() {
 
     let animationFrameId;
     let particles = [];
-    const count = 75;
+    const count = typeof window !== "undefined" && window.innerWidth < 768 ? 35 : 75;
 
     const resize = () => {
       canvas.width = canvas.parentElement.offsetWidth;
@@ -179,7 +179,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full min-h-screen bg-black text-white py-20 px-4 sm:px-6 lg:px-12 flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen bg-black text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-12 flex items-center justify-center overflow-hidden"
     >
       {/* ================= COSMIC PARTICLES BACKGROUND ================= */}
       <CosmicParticles />
@@ -191,7 +191,7 @@ export default function Contact() {
 
       {/* ================= MAIN CONTAINER ================= */}
       <div className="relative z-10 w-full max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
           
           {/* ================= LEFT COLUMN: ASTRONAUT ARTWORK ================= */}
           <motion.div
@@ -202,12 +202,12 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             {/* Ambient Moon Glow behind Astronaut */}
-            <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-600/30 via-cyan-500/20 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute w-56 h-56 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-purple-600/30 via-cyan-500/20 to-transparent blur-3xl pointer-events-none" />
 
             {/* Floating Animated Astronaut Artwork */}
             <motion.div
               animate={{
-                y: [-12, 12, -12],
+                y: [-8, 8, -8],
                 rotate: [-1.5, 1.5, -1.5],
               }}
               transition={{
@@ -215,7 +215,7 @@ export default function Contact() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative z-10 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-full drop-shadow-[0_0_35px_rgba(59,130,246,0.35)]"
+              className="relative z-10 w-full max-w-[200px] sm:max-w-[320px] lg:max-w-full drop-shadow-[0_0_35px_rgba(59,130,246,0.35)]"
             >
               <img
                 src={astraImg}
@@ -233,24 +233,24 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-zinc-950/85 border border-zinc-800/80 rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden">
+            <div className="bg-zinc-950/85 border border-zinc-800/80 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl relative overflow-hidden">
               
               {/* Form Header */}
-              <div className="mb-8">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              <div className="mb-6 sm:mb-8 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
                   Let's Work Together
                 </h2>
-                <p className="mt-2 text-sm sm:text-base text-gray-400">
+                <p className="mt-1.5 sm:mt-2 text-xs sm:text-base text-gray-400">
                   Have a project in mind or want to collaborate? Fill out the form below and I'll get back to you promptly.
                 </p>
               </div>
 
               {/* Contact Form */}
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 
                 {/* 1. Your Name */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                     Your Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -260,13 +260,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                   />
                 </div>
 
                 {/* 2. Your Email */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                     Your Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -276,20 +276,20 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                   />
                 </div>
 
                 {/* 3. Service Needed */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                     Service Needed <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all cursor-pointer"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all cursor-pointer"
                   >
                     <option value="Web Development" className="bg-zinc-900 text-white">
                       Web Development
@@ -320,7 +320,7 @@ export default function Contact() {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                       Your Budget <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -330,14 +330,14 @@ export default function Contact() {
                       value={formData.budget}
                       onChange={handleChange}
                       placeholder="Your Budget (e.g. ₹10,000 / $200+)"
-                      className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
                     />
                   </motion.div>
                 )}
 
                 {/* 5. Explain Your Idea */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
                     Explain Your Idea <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -347,7 +347,7 @@ export default function Contact() {
                     value={formData.idea}
                     onChange={handleChange}
                     placeholder="Explain your idea..."
-                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none"
                   />
                 </div>
 

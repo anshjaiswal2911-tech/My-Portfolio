@@ -54,7 +54,7 @@ export default function About() {
 
       {/* ================= MAIN CONTAINER ================= */}
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-24">
 
         {/* ================= PROFILE ================= */}
 
@@ -63,7 +63,10 @@ export default function About() {
             flex
             flex-col
             items-center
-            gap-8
+            text-center
+            md:text-left
+            gap-6
+            sm:gap-8
             md:flex-row
             md:items-start
           "
@@ -80,9 +83,11 @@ export default function About() {
               src={avatar}
               alt="Ansh Jaiswal"
               className="
-                h-40
-                w-40
-                rounded-xl
+                h-32
+                w-32
+                sm:h-40
+                sm:w-40
+                rounded-2xl
                 border
                 border-cyan-400/30
                 object-cover
@@ -93,14 +98,15 @@ export default function About() {
 
           {/* ================= PROFILE DETAILS ================= */}
 
-          <div className="flex-1">
+          <div className="flex-1 w-full">
 
             {/* NAME */}
 
             <h2
               className="
                 mb-2
-                text-4xl
+                text-3xl
+                sm:text-4xl
                 font-bold
                 tracking-tight
                 text-cyan-400
@@ -112,7 +118,7 @@ export default function About() {
 
             {/* ROLE */}
 
-            <h3 className="mb-5 text-xl font-semibold md:text-2xl">
+            <h3 className="mb-4 sm:mb-5 text-lg sm:text-xl font-semibold md:text-2xl text-gray-200">
               Full Stack Developer
             </h3>
 
@@ -121,7 +127,8 @@ export default function About() {
             <p
               className="
                 max-w-3xl
-                text-base
+                text-sm
+                sm:text-base
                 leading-relaxed
                 text-gray-300
                 md:text-lg
@@ -137,7 +144,8 @@ export default function About() {
               className="
                 mt-3
                 max-w-3xl
-                text-base
+                text-sm
+                sm:text-base
                 leading-relaxed
                 text-gray-300
                 md:text-lg
@@ -152,10 +160,12 @@ export default function About() {
 
             <div
               className="
-                mt-7
+                mt-6
+                sm:mt-7
                 grid
                 grid-cols-1
-                gap-4
+                gap-3
+                sm:gap-4
                 sm:grid-cols-3
               "
             >
@@ -168,8 +178,10 @@ export default function About() {
                   border
                   border-white/10
                   bg-white/[0.03]
-                  px-5
-                  py-5
+                  px-4
+                  sm:px-5
+                  py-4
+                  sm:py-5
                   text-center
                   backdrop-blur-sm
                   transition-all
@@ -178,11 +190,11 @@ export default function About() {
                   hover:bg-white/[0.05]
                 "
               >
-                <p className="text-sm text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-400">
                   Experience
                 </p>
 
-                <p className="mt-1 font-bold text-white">
+                <p className="mt-1 font-bold text-sm sm:text-base text-white">
                   Full Stack Intern
                 </p>
               </div>
@@ -195,8 +207,10 @@ export default function About() {
                   border
                   border-white/10
                   bg-white/[0.03]
-                  px-5
-                  py-5
+                  px-4
+                  sm:px-5
+                  py-4
+                  sm:py-5
                   text-center
                   backdrop-blur-sm
                   transition-all
@@ -205,11 +219,11 @@ export default function About() {
                   hover:bg-white/[0.05]
                 "
               >
-                <p className="text-sm text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-400">
                   Speciality
                 </p>
 
-                <p className="mt-1 font-bold text-white">
+                <p className="mt-1 font-bold text-sm sm:text-base text-white">
                   Web Development
                 </p>
               </div>
@@ -222,8 +236,10 @@ export default function About() {
                   border
                   border-white/10
                   bg-white/[0.03]
-                  px-5
-                  py-5
+                  px-4
+                  sm:px-5
+                  py-4
+                  sm:py-5
                   text-center
                   backdrop-blur-sm
                   transition-all
@@ -232,12 +248,12 @@ export default function About() {
                   hover:bg-white/[0.05]
                 "
               >
-                <p className="text-sm text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-400">
                   Focus
                 </p>
 
-                <p className="mt-1 font-bold text-white">
-                  DSA & Software Development
+                <p className="mt-1 font-bold text-sm sm:text-base text-white">
+                  DSA & Software Dev
                 </p>
               </div>
 
@@ -245,7 +261,7 @@ export default function About() {
 
             {/* ================= BUTTONS ================= */}
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
 
               {/* VIEW PROJECTS */}
 
@@ -254,13 +270,19 @@ export default function About() {
                 className="
                   rounded-lg
                   bg-white
-                  px-6
-                  py-3
+                  px-5
+                  sm:px-6
+                  py-2.5
+                  sm:py-3
                   font-semibold
+                  text-sm
+                  sm:text-base
                   text-black
                   transition-transform
                   duration-300
                   hover:scale-105
+                  active:scale-95
+                  text-center
                 "
               >
                 View Projects
@@ -275,14 +297,20 @@ export default function About() {
                   border
                   border-white/20
                   bg-white/[0.03]
-                  px-6
-                  py-3
+                  px-5
+                  sm:px-6
+                  py-2.5
+                  sm:py-3
                   font-semibold
+                  text-sm
+                  sm:text-base
                   text-white
                   transition-all
                   duration-300
                   hover:border-cyan-400/40
                   hover:bg-white/10
+                  active:scale-95
+                  text-center
                 "
               >
                 Get in Touch
