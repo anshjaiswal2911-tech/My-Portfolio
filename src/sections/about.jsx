@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import avatar from "../assets/P.PNG";
+import avatar from "../assets/P.webp";
 
 export default function About() {
   return (
@@ -82,6 +82,8 @@ export default function About() {
             <img
               src={avatar}
               alt="Ansh Jaiswal"
+              loading="lazy"
+              decoding="async"
               className="
                 h-32
                 w-32

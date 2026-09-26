@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2, Sparkles, Mail, User, DollarSign, MessageSquare, Briefcase } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import astraImg from "../assets/Astra.png";
+import astraImg from "../assets/Astra.webp";
 
 // =====================================================
 // COSMIC PARTICLES BACKGROUND CANVAS
@@ -220,6 +220,8 @@ export default function Contact() {
               <img
                 src={astraImg}
                 alt="Astronaut on Moon playing guitar"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-contain select-none pointer-events-none"
               />
             </motion.div>

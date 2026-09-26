@@ -1,6 +1,6 @@
 import { useState } from "react";
 import OverlayMenu from "./overlaymenue";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo.webp";
 import { Menu } from "lucide-react";
 
 export default function Navbar() {

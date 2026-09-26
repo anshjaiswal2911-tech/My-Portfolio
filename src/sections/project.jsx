@@ -6,9 +6,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ExternalLink, Sparkles, ArrowUpRight, Globe } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
-import collabnestImg from "../assets/collabnest.png";
-import gramvoiceImg from "../assets/gramvoice.png";
-import taskflowImg from "../assets/taskflow.png";
+import collabnestImg from "../assets/collabnest.webp";
+import gramvoiceImg from "../assets/gramvoice.webp";
+import taskflowImg from "../assets/taskflow.webp";
 
 // =====================================================
 // PROJECTS DATA
@@ -192,6 +192,7 @@ function ProjectCard({ project, index, total, range, targetScale, progress }) {
                   alt={project.title}
                   className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Subtle Hover Overlay with Pill */}

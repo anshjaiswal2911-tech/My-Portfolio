@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa6";
 
 import ParticlesBackground from "../components/particlebackground";
-import avator from "../assets/avator.png";
+import avator from "../assets/avator.webp";
 
 const roles = [
   "Web Developer",
@@ -608,6 +608,8 @@ export default function Home() {
             <motion.img
               src={avator}
               alt="Ansh Jaiswal"
+              loading="eager"
+              decoding="async"
               className="
                 relative
                 z-10
