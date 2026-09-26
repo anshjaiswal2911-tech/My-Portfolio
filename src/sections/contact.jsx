@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2, Sparkles, Mail, User, DollarSign, MessageSquare, Briefcase } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { supabase } from "../lib/supabase";
 import astraImg from "../assets/Astra.webp";
 
 // =====================================================
@@ -146,6 +147,29 @@ export default function Contact() {
     };
 
     try {
+      // 1. Save to Supabase PostgreSQL Database (if configured)
+      if (supabase) {
+        try {
+          const { error: dbError } = await supabase.from("inquiries").insert([
+            {
+              name: formData.name,
+              email: formData.email,
+              service: formData.service,
+              budget: isOthers ? "N/A" : (formData.budget || "Not Specified"),
+              message: formData.idea,
+            },
+          ]);
+          if (dbError) {
+            console.warn("Supabase insert note:", dbError.message);
+          } else {
+            console.log("Supabase: Inquiry saved successfully to PostgreSQL database! 🗄️");
+          }
+        } catch (dbErr) {
+          console.warn("Supabase insert error:", dbErr);
+        }
+      }
+
+      // 2. Send instant Email Notification via EmailJS
       const res = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
