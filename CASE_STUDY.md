@@ -23,7 +23,29 @@ This document details the product design thinking, visual systems, UX heuristics
 
 ## 2. Product Deep-Dives: Research, UX Architecture & Solutions
 
-### Case Study 01: GramVoice AI — Designing Voice-First Multimodal UI for Rural Bharat
+### Case Study 01: TRUVA — National Legal Metrology & Fair Commerce AI Enforcement Platform
+* **Domain:** GovTech, Statutory Compliance AI & Cross-Platform Systems  
+* **Live Deployment:** [truva.vercel.app](https://truva.vercel.app) | **Source Code:** [github.com/anshjaiswal2911-tech/TRUVA-](https://github.com/anshjaiswal2911-tech/TRUVA-)
+
+```
+[ Statutory Problem ]          [ System Innovation ]          [ Perception Engine ]          [ Enforcement Output ]
+Packaged commodity violations  Automated Rule 6(1) audit      Computer Vision & OCR detects  Court-admissible Sec 36
+& shrinkflation go undetected  across Indian FMCG in under    missing declarations, MRP,     dossier + NCH 1915 grievance
+across millions of retailers.  500ms on edge/cloud.           and Principal Display Area.    with SHA-256 tamper proofing.
+```
+
+#### The User Challenge & Policy Context
+Enforcing the *Legal Metrology (Packaged Commodities) Rules, 2011* across hundreds of millions of retail packages manually is an operational impossibility. Inspectors struggle with manual geometric calculations (Principal Display Area, font height compliance, net quantity declarations), while 1.4 billion consumers fall victim to hidden shrinkflation and deceptive MRP stickers.
+
+#### The UX/UI & Systems Architecture
+1. **Dual Role-Based Portals:** Designed high-clarity separated user pathways: an intuitive **Citizen Grievance Portal** for instant consumer verification and an authenticated **Inspector Enforcement Suite** with court-admissible audit trails.
+2. **Real-Time Perception Reticle:** Built a responsive live commodity perception viewport (ISO/IEC 17025 standard) with automated bounding-box overlays verifying Rule 6(1) declarations in milliseconds.
+3. **Cryptographic Tamper-Proof Dossiers:** Engineered zero-tamper evidence reports signed with SHA-256 hashes, instantly exportable for Section 36 legal prosecutions.
+4. **Full-Stack Architecture:** Built on TypeScript, React, Python AI/OCR pipelines, Supabase PostgreSQL, and Capacitor for native cross-platform Android/iOS edge deployment.
+
+---
+
+### Case Study 02: GramVoice AI — Designing Voice-First Multimodal UI for Rural Bharat
 * **Domain:** Inclusive Design, Voice UX & Multimodal AI  
 * **Live Deployment:** [gram-voice-ai.vercel.app](https://gram-voice-ai.vercel.app) | **Source Code:** [github.com/anshjaiswal2911-tech/GramVoice-Ai](https://github.com/anshjaiswal2911-tech/GramVoice-Ai)
 
@@ -44,7 +66,7 @@ Over 70% of rural Indian micro-entrepreneurs and artisans struggle to access gov
 
 ---
 
-### Case Study 02: CollabNest — Developer Intelligence & Team Matchmaking
+### Case Study 03: CollabNest — Developer Intelligence & Team Matchmaking
 * **Domain:** Collaborative UX, Network Discovery & Matching Algorithms  
 * **Live Deployment:** [find-teammates.vercel.app](https://find-teammates.vercel.app) | **Source Code:** [github.com/anshjaiswal2911-tech/find-teammates](https://github.com/anshjaiswal2911-tech/find-teammates)
 
@@ -58,7 +80,7 @@ Solo developers and designers frequently spend hours scouring unstructured commu
 
 ---
 
-### Case Study 03: TaskFlow Pro — Precision SaaS Workflow & Analytics Dashboard
+### Case Study 04: TaskFlow Pro — Precision SaaS Workflow & Analytics Dashboard
 * **Domain:** SaaS Analytics, Information Hierarchy & Productivity UX  
 * **Live Deployment:** [taskflow-dashboard-kohl.vercel.app](https://taskflow-dashboard-kohl.vercel.app) | **Source Code:** [github.com/anshjaiswal2911-tech/taskflow-dashboard](https://github.com/anshjaiswal2911-tech/taskflow-dashboard)
 

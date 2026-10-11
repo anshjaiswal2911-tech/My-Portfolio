@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ExternalLink, Sparkles, ArrowUpRight, Globe } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
+import truvaImg from "../assets/truva.webp";
 import collabnestImg from "../assets/collabnest.webp";
 import gramvoiceImg from "../assets/gramvoice.webp";
 import taskflowImg from "../assets/taskflow.webp";
@@ -18,6 +19,22 @@ const projects = [
   {
     id: 1,
     num: "01",
+    title: "TRUVA",
+    tagline: "National Legal Metrology & Fair Commerce AI Enforcement Platform",
+    category: "Full-Stack AI & Legal Metrology GovTech",
+    description:
+      "A national-scale full-stack platform built under the Legal Metrology (Packaged Commodities) Rules, 2011 for 1.4B citizens & officers. Automates real-time Rule 6(1) compliance audits, exposes hidden shrinkflation, and generates court-admissible SHA-256 Section 36 enforcement dossiers & NCH 1915 consumer grievances.",
+    tech: ["TypeScript", "Python (AI/CV)", "React.js", "Capacitor (Android/iOS)", "Supabase", "Tailwind CSS"],
+    liveUrl: "https://truva.vercel.app",
+    githubUrl: "https://github.com/anshjaiswal2911-tech/TRUVA-",
+    image: truvaImg,
+    badge: "Full-Stack GovTech AI",
+    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+    accentColor: "#10b981",
+  },
+  {
+    id: 2,
+    num: "02",
     title: "CollabNest",
     tagline: "AI-Powered Developer & Resource Intelligence Hub",
     category: "AI Team Matching & Collaboration",
@@ -32,8 +49,8 @@ const projects = [
     accentColor: "#22d3ee",
   },
   {
-    id: 2,
-    num: "02",
+    id: 3,
+    num: "03",
     title: "GramVoice AI",
     tagline: "Full-Stack Voice AI Platform for Rural Entrepreneurs",
     category: "Full-Stack Voice AI & Empowerment",
@@ -48,8 +65,8 @@ const projects = [
     accentColor: "#38bdf8",
   },
   {
-    id: 3,
-    num: "03",
+    id: 4,
+    num: "04",
     title: "TaskFlow Pro",
     tagline: "Precision Workflow & Task Management Dashboard",
     category: "Productivity & SaaS Analytics",

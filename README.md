@@ -63,6 +63,7 @@ my-project/
 │   ├── assets/                   # Optimized WebP assets & vector icons
 │   │   ├── Astra.webp            # Floating Cosmic Astronaut
 │   │   ├── avator.webp           # Hero Avatar Artwork
+│   │   ├── truva.webp            # TRUVA Metrology AI Screenshot
 │   │   ├── collabnest.webp       # CollabNest Screenshot
 │   │   ├── gramvoice.webp        # GramVoice AI Screenshot
 │   │   ├── taskflow.webp         # TaskFlow Pro Screenshot
@@ -100,9 +101,10 @@ my-project/
 
 | # | Project | Category | Tech Stack | Live Demo | Repository |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| **01** | **CollabNest** | AI Team Matchmaking | `React.js` • `Tailwind` • `Gemini AI` • `Node.js` • `Vercel` | [Live Demo](https://find-teammates.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/find-teammates) |
-| **02** | **GramVoice AI** | Full-Stack Voice AI | `React.js` • `Node.js` • `Express` • `Gemini AI` • `Web Speech API` | [Live Demo](https://gram-voice-ai.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/GramVoice-Ai) |
-| **03** | **TaskFlow Pro** | SaaS Productivity Dashboard | `React.js` • `TypeScript` • `Tailwind CSS` • `Lucide Icons` | [Live Demo](https://taskflow-dashboard-kohl.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/taskflow-dashboard) |
+| **01** | **TRUVA** | Full-Stack GovTech AI | `TypeScript` • `Python AI/CV` • `React` • `Capacitor` • `Supabase` | [Live Demo](https://truva.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/TRUVA-) |
+| **02** | **CollabNest** | AI Team Matchmaking | `React.js` • `Tailwind` • `Gemini AI` • `Node.js` • `Vercel` | [Live Demo](https://find-teammates.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/find-teammates) |
+| **03** | **GramVoice AI** | Full-Stack Voice AI | `React.js` • `Node.js` • `Express` • `Gemini AI` • `Web Speech API` | [Live Demo](https://gram-voice-ai.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/GramVoice-Ai) |
+| **04** | **TaskFlow Pro** | SaaS Productivity Dashboard | `React.js` • `TypeScript` • `Tailwind CSS` • `Lucide Icons` | [Live Demo](https://taskflow-dashboard-kohl.vercel.app) | [Source Code](https://github.com/anshjaiswal2911-tech/taskflow-dashboard) |
 
 ---
 
